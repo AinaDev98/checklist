@@ -1,0 +1,76 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}CheckList{% endblock %}
+
+{% block body %}
+<div class="bg-dark pt-2 pb-1">
+    <h4 class="text-white text-center">CHECK LIST</h4>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="text-center">
+        <a href="{{ path('app_admin') }}" class="btn btn-primary"><i class="fad fa-dashboard"></i> Dashboard</a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table text-center">
+                <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Boutiques</th>
+                    <th scope="col">Winparf</th>
+                    <th scope="col">Mail</th>
+                    <th scope="col">Connexion</th>
+                    <th scope="col">Cloud</th>
+                    <th scope="col">Télephone</th>
+                    <th scope="col">Qr Code</th>
+                    <th scope="col">Commentaire</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for list in listCheck %}
+                <tr class="texte">
+                    <td>{{ list.createdAt|date("d/m/Y") }}</td>
+                    <td>{{ list.Boutique }}</td>
+                    {% if (list.Winparf == 'OK') %}
+                        <td>{{ list.Winparf }}</td>
+                    {% else %}
+                        <td class="text-danger">{{ list.Winparf }}</td>
+                    {% endif %}
+                    {% if(list.Mail == 'KO') %}
+                        <td class="text-danger">{{ list.Mail }}</td>
+                    {% else %}
+                        <td>{{ list.Mail }}</td>
+                    {% endif %}
+                    {% if(list.Connexion == 'KO') %}
+                        <td class="text-danger">{{ list.Connexion }}</td>
+                    {% else %}
+                        <td>{{ list.Connexion }}</td>
+                    {% endif %}
+                    {% if(list.Cloud == 'KO') %}
+                        <td class="text-danger">{{ list.Cloud }}</td>
+                    {% else %}
+                        <td>{{ list.Cloud }}</td>
+                    {% endif %}
+                    {% if(list.Telephone == 'KO') %}
+                        <td class="text-danger">{{ list.Telephone }}</td>
+                    {% else %}
+                        <td>{{ list.Telephone }}</td>
+                    {% endif %}
+                    {% if(list.QrCode == 'Aucun') %}
+                        <td class="text-danger">{{ list.QrCode }}</td>
+                    {% elseif (list.QrCode == 'Non actif') %}
+                        <td class="text-warning">{{ list.QrCode }}</td>
+                    {% else %}
+                        <td>{{ list.QrCode }}</td>
+                    {% endif %}
+                    <td>{{ list.Commentaire|raw }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

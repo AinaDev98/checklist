@@ -1,0 +1,88 @@
+@import url('../fonts/Montserrat-VariableFont_wght.otf');
+body {
+    padding-top: 83px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.my-btn {
+    padding: 50px 90px;
+}
+
+.my-btn-1 {
+    padding: 50px 102px;
+}
+
+.my-btn-2 {
+    padding: 50px 123px;
+}
+
+.my-btn-3 {
+    padding: 50px 87px;
+}
+
+.my-btn-4 {
+    padding: 50px 115px;
+}
+
+.my-btn-5 {
+    padding: 50px 85px;
+}
+
+.my-btn-6 {
+    padding: 50px 100px;
+}
+
+.my-btn-7 {
+    padding: 50px 90px;
+}
+
+.my-btn-8 {
+    padding: 50px 55px
+}
+
+.texte {
+    font-weight: bold;
+}
+
+input[type = "radio"] {
+    display: none;
+}
+
+.form-check-label {
+    position: relative;
+    color: #01cc65;
+    font-size: 15px;
+    border: 2px solid #01cc65;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-check-label:before {
+    content: "";
+    height: 30px;
+    width: 30px;
+    border: 3px solid #01cc65;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+input[type = "radio"]:checked + .form-check-label {
+    background-color: #01cc65;
+    color: white;
+    font-weight: bold;
+}
+
+input[type = "radio"]:checked + .form-check-label:before {
+    height: 16px;
+    width: 16px;
+    border: 10px solid white;
+    background-color: #01cc65;
+}
+
+
+
+
+

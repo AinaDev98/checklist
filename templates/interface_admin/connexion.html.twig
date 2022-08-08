@@ -1,0 +1,23 @@
+{% extends 'admin.html.twig' %}
+{% form_theme formConnexion 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    <div class="bg-dark pt-2 pb-1">
+        <h4 class="text-white text-center">CONNEXION</h4>
+    </div>
+
+    <div class="container mt-lg-5">
+        <div class="text-center">
+            <a href="{{ path('app_list_connexion') }}" class="btn btn-default text-primary"><i class="fad fa-list"></i> Listes</a>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                {{ form(formConnexion) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}CheckList System{% endblock %} - PARFUM PRESTIGE SA</title>
+    <link rel="icon" href="{{ asset('images/Logo.png') }}">
+    <link href="{{ asset('assets/css/all.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-pro/css/all.css') }}">
+    {% block stylesheets %}{% endblock %}
+    {% block javascripts %}{% endblock %}
+</head>
+<body>
+
+{% block body %}{% endblock %}
+<script src="{{ asset('assets/js/all.min.js') }}"></script>
+</body>
+</html>

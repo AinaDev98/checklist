@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% form_theme formCheck 'bootstrap_5_layout.html.twig' %}
+{% block title %}CheckList System{% endblock %}
+
+{% block body %}
+
+    <div class="container col-md-8 mt-lg-5">
+        {{ form_start(formCheck) }}
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(formCheck.Boutique) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(formCheck.Winparf) }}
+            </div>
+            <div class="col">
+                {{ form_row(formCheck.Mail) }}
+            </div>
+            <div class="col">
+                {{ form_row(formCheck.Connexion) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(formCheck.Cloud) }}
+            </div>
+            <div class="col">
+                {{ form_row(formCheck.Telephone) }}
+            </div>
+            <div class="col">
+                {{ form_row(formCheck.QrCode) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(formCheck.Commentaire) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+                {{ form_row(formCheck.Submit) }}
+            </div>
+        </div>
+        {{ form_end(formCheck) }}
+    </div>
+
+{% endblock %}

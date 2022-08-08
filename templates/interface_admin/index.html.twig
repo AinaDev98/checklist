@@ -1,0 +1,72 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+    <div class="bg-dark pt-2 pb-1">
+        <h4 class="text-white text-center">DASHBOARD ADMINISTRATOR</h4>
+    </div>
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col mt-1">
+            <a href="{{ path('app_boutiques') }}" class="btn btn-dark text-white my-btn"><h4>Boutiques</h4></a>
+        </div>
+        <div class="col mt-1">
+            <a href="{{ path('app_winparf') }}" class="btn btn-dark text-white my-btn-1"><h4>Winparf</h4></a>
+        </div>
+        <div class="col mt-1">
+            <a href="{{ path('app_mail') }}" class="btn btn-dark text-white my-btn-2"><h4>Mail</h4></a>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col mt-1">
+            <a href="{{ path('app_connexion') }}" class="btn btn-dark text-white my-btn-3"><h4>Connexion</h4></a>
+        </div>
+        <div class="col mt-1">
+            <a href="{{ path('app_cloud') }}" class="btn btn-dark text-white my-btn-4"><h4>Cloud</h4></a>
+        </div>
+        <div class="col mt-1">
+            <a href="{{ path('app_phone') }}" class="btn btn-dark text-white my-btn-5"><h4>Télephone</h4></a>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col mt-1">
+            <a href="{{ path('app_qrcode') }}" class="btn btn-dark text-white my-btn-6"><h4>QR Code</h4></a>
+        </div>
+        <div class="col mt-1">
+            <a href="{{ path('app_register') }}" class="btn btn-dark text-white my-btn-6"><h4>Comptes</h4></a>
+        </div>
+        <div class="col mt-1">
+            <a href="{{ path('app_checklist') }}" class="btn btn-success text-white my-btn-7"><h4>CheckList</h4></a>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col mt-1">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger my-btn-8" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <h4><i class="fad fa-sign-out"></i> Déconnexion</h4>
+            </button>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Êtes-vous sûr de vouloir vous déconnectez</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Pour quitter votre compte veuillez cliquer sur <b>Déconnexion</b>.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fad fa-close"></i> Fermer</button>
+                    <a href="{{ path('app_logout') }}"  class="btn btn-danger"><i class="fad fa-sign-out"></i> Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

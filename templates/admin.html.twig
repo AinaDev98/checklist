@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}CheckList System{% endblock %} - PARFUM PRESTIGE SA</title>
+        <link rel="icon" href="{{ asset('images/Logo.png') }}">
+        <link href="{{ asset('assets/css/all.min.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-pro/css/all.css') }}">
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+
+    <!-- Barre de menu fixe -->
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ path('app_admin') }}"><img src="{{ asset('images/Logo.png') }}" width="60" alt="PARFUM PRESTIGE S.A">PARFUM PRESTIGE S.A</a>
+            <div class="collapse navbar-collapse mr-5" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0"></ul>
+                <h4><i class="fad fa-list-alt"></i> CHECKLIST SYSTEM <sup>1.0</sup></h4>
+            </div>
+        </div>
+    </nav>
+
+        {% block body %}{% endblock %}
+        <script src="{{ asset('assets/js/all.min.js') }}"></script>
+    </body>
+</html>

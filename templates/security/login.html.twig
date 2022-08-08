@@ -1,0 +1,38 @@
+{% extends 'access.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+        </div>
+    {% endif %}
+
+    <div class="container col-md-4">
+        <div class="text-center">
+            <img src="{{ asset('images/Logo.png') }}" width="150" alt="PARFUM PRESTIGE S.A">
+            <h1 class="h3 mb-3 font-weight-normal ">ADMINISTRATOR ACCESS</h1>
+        </div>
+        <label for="inputEmail">Nom d'utilisateur :</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <br>
+        <label for="inputPassword">Mot de passe :</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        ><br>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-lg btn-primary" type="submit">
+                Se connecter
+            </button>
+        </div>
+</form>
+    </div>
+{% endblock %}
